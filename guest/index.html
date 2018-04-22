@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .notifs_area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0,.64);
+            overflow: hidden;
+            z-index: 9999;
+        }
+        .notifs-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            max-width: 460px;
+            padding: 25px;
+            margin: 0 auto;
+            border: 1px solid #cfcece;
+            background-color: #f7f7f7;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            -webkit-box-shadow: 0 3px 2px #777;
+            -moz-box-shadow: 0 3px 2px #777;
+            box-shadow: 0 3px 2px #777;
+        }
+        .notifs-message__text {
+            padding: 15px 0 15px 70px;
+            font-size: 14px;
+            font-family: Arial;
+            vertical-align: middle;
+            background-image: url(icon.svg);
+            background-position: left center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .notifs-message__button {
+            display: block;
+            width: 120px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #cfcece;
+            margin: 10px 0 0 auto;
+            transition: .25s;
+            outline: none;
+        }
+        .notifs-message__button:hover {
+            background-color: #f7f7f7;
+            border: 1px solid #cfcece;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="notifs_area">
+        <div class="notifs-message">
+            <div class="notifs-message__text">
+                Lorem ipsum dolor sit amet, consectetur
+            </div>
+            <button class="notifs-message__button">OK</button>
+        </div>
+    </div>
+
+    <script src="subscribeme.js"></script>
+    <script>
+        (function() {
+
+          window.addEventListener("load", function() {
+            var subscribeme = new SubscribeMe({
+              templateSelector: ".notifs_area",
+              domainsList : [
+                "https://parent.3f1afg2.ru",
+                "https://3f1afg2.ru"
+              ]
+            });
+          });
+
+        })();
+    </script>
+</body>
+</html>
